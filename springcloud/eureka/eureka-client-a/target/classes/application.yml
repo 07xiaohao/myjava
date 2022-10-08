@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: eureka-client-a
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka,http://peer3:8763/eureka
+    register-with-eureka: true  #可以不往eureka-server注册
+    fetch-registry: true  #应用是否拉取缓存服务列表到本地
+    registry-fetch-interval-seconds: 10  #为了缓解缓存服务列表脏读问题，时间越短脏读越少，但性能耗费大
+  instance:
+    hostname: localhost #应用的主机名称 最好写主机ip
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+    prefer-ip-address: true #显示ip
+    lease-renewal-interval-in-seconds: 10 #实例续约时间

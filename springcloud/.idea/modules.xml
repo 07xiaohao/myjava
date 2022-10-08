@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/openfeign/01-order-service/01-order-service.iml" filepath="$PROJECT_DIR$/openfeign/01-order-service/01-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/comsumer-a/comsumer-a.iml" filepath="$PROJECT_DIR$/ribbon/comsumer-a/comsumer-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix/customer-service/customer-service.iml" filepath="$PROJECT_DIR$/hystrix/customer-service/customer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-client-a/eureka-client-a.iml" filepath="$PROJECT_DIR$/eureka/eureka-client-a/eureka-client-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-client-b/eureka-client-b.iml" filepath="$PROJECT_DIR$/eureka/eureka-client-b/eureka-client-b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-server-b/eureka-server-b.iml" filepath="$PROJECT_DIR$/eureka/eureka-server-b/eureka-server-b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka-server-c/eureka-server-c.iml" filepath="$PROJECT_DIR$/eureka/eureka-server-c/eureka-server-c.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix/hystrix.iml" filepath="$PROJECT_DIR$/hystrix/hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix/my-fish/my-fish.iml" filepath="$PROJECT_DIR$/hystrix/my-fish/my-fish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openfeign/openfeign.iml" filepath="$PROJECT_DIR$/openfeign/openfeign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openfeign/order-service/order-service.iml" filepath="$PROJECT_DIR$/openfeign/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/provider-a/provider-a.iml" filepath="$PROJECT_DIR$/ribbon/provider-a/provider-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/provider-b/provider-b.iml" filepath="$PROJECT_DIR$/ribbon/provider-b/provider-b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix/rent-car-service/rent-car-service.iml" filepath="$PROJECT_DIR$/hystrix/rent-car-service/rent-car-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/rest-template/rest-template.iml" filepath="$PROJECT_DIR$/eureka/rest-template/rest-template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon/ribbon.iml" filepath="$PROJECT_DIR$/ribbon/ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openfeign/user-service/user-service.iml" filepath="$PROJECT_DIR$/openfeign/user-service/user-service.iml" />
+    </modules>
+  </component>
+</project>
