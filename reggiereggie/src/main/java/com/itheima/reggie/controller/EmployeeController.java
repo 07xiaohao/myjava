@@ -67,11 +67,12 @@ public class EmployeeController {
     @PostMapping
     public R<String> insert(HttpServletRequest request, @RequestBody Employee employee){
         employee.setPassword (DigestUtils.md5DigestAsHex ("123456".getBytes ()));
-        employee.setCreateTime (LocalDateTime.now ());
+        //公共字段自动填充
+      /*  employee.setCreateTime (LocalDateTime.now ());
         employee.setUpdateTime (LocalDateTime.now ());
         employee.setCreateUser ((long)request.getSession ().getAttribute ("employee"));
-        employee.setUpdateUser ((long)request.getSession ().getAttribute ("employee"));
-       
+        employee.setUpdateUser ((long)request.getSession ().getAttribute ("employee"));*/
+
         boolean save = employeeService.save (employee);
         if (save){
             return R.success ("添加员工成功");
@@ -83,11 +84,33 @@ public class EmployeeController {
     @GetMapping("/page")
     public R<Page<Employee>> page(@RequestParam(value = "name",required = false) String name,@RequestParam("page") Integer page,@RequestParam("pageSize") Integer pageSize){
         log.info ("page = {},name = {}.pageSize = {}" ,page,name,pageSize);
+        //构造分页构造器
         Page page1=new Page (page, pageSize);
+
+        //构造条件构造器
         LambdaQueryWrapper<Employee> lambdaQueryWrapper=new LambdaQueryWrapper ();
+        //添加过滤条件
        lambdaQueryWrapper.like (StringUtils.isNotEmpty (name), Employee::getName, name);
+        //添加排序条件
+        lambdaQueryWrapper.orderByDesc(Employee::getUpdateTime);
        employeeService.page (page1, lambdaQueryWrapper);
 
         return R.success (page1);
+    }
+    @PutMapping
+    public R<String>  updateStatus(@RequestBody Employee employee,HttpServletRequest request){
+        employee.setUpdateUser ((long)request.getSession ().getAttribute ("employee"));
+        employee.setUpdateTime (LocalDateTime.now ());
+        employeeService.updateById (employee);
+        return R.success ("修改信息成功");
+    }
+    @GetMapping("/{id}")
+    public R<Employee> bianji(@PathVariable("id")long id){
+        Employee employee = employeeService.getById (id);
+        if (employee!=null){
+            return R.success (employee);
+        }else {
+          return   R.error ("没有查询到对应员工信息");
+        }
     }
 }

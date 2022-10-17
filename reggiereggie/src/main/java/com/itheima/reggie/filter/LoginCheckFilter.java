@@ -1,6 +1,7 @@
 package com.itheima.reggie.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.itheima.reggie.common.BaseContext;
 import com.itheima.reggie.common.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
@@ -30,6 +31,7 @@ public class LoginCheckFilter implements Filter {
 
         HttpServletRequest request =(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
+
         String[] strings=new String[]{
                 "/employee/login",
                 "/employee/logout",
@@ -43,6 +45,7 @@ public class LoginCheckFilter implements Filter {
             return;
         }
         if (request.getSession ().getAttribute ("employee")!=null){
+            BaseContext.setCurrentId ((long) request.getSession ().getAttribute ("employee"));
             filterChain.doFilter (request, response);
             return;
         }else {
@@ -52,10 +55,12 @@ public class LoginCheckFilter implements Filter {
     }
     /**
      * 路径匹配，检查本次请求是否需要放行
-     * @param urls
-     * @param requestURI
+     *
+     * @param strings
+     * @param url
      * @return
      */
+
     public boolean check(String[] strings,String url){
         for (String s:strings){
             boolean match = antPathMatcher.match (s, url);
